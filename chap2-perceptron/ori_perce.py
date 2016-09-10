@@ -4,6 +4,7 @@
 class Perce(object):
     '''
     感知机模型的原始形式
+
     '''
 
     def __init__(self, train_set, w=None, b=0, p=1):
