@@ -7,6 +7,7 @@ class Perce(object):
     '''
     感知机模型的对偶形式
     基本使用np包来实现
+
     '''
     def __init__(self, train_set, a=None, b=0, p=1):
         '''
