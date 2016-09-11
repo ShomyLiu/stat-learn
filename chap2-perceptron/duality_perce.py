@@ -29,7 +29,7 @@ class Perce(object):
         更新参数 a,b
         '''
         self.iter_time += 1
-        self. a[i] += 1
+        self. a[i] += self.p
         self.b = self.b + self.p * self.current_update_item[1]
         print '第', self.iter_time, '次迭代:', 'a =', self.a, 'b =', self.b
 
