@@ -71,6 +71,7 @@ class Perce(object):
 
         return flag
 
+
 if __name__ == "__main__":
     train_set = np.array([[[3, 3], 1], [[4, 3], 1], [[1, 1], -1]])
     per = Perce(train_set=train_set)
