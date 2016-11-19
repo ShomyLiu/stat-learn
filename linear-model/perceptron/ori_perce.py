@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+
 class Perce(object):
     '''
     感知机模型的原始形式
