@@ -27,15 +27,14 @@ def main():
     method = 'sum'
 
     data = getData(numSample,dim, method=method)
-
     rbf = RBFNet(k=dim * 2)
-
     rbf.fit(*data)
 
     testNum = 5
     test_data = getData(testNum, dim, method=method)
     prediction = rbf.predict(test_data[0])
     for i in range(testNum):
+        print 'X:', test_data[0][i]
         print 'real      :',test_data[1][i]
         print 'prediction:',prediction[i]
         print '*' * 30
