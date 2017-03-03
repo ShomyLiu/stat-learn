@@ -18,7 +18,7 @@ def getData(n=100, d=5, method='sum'):
 
 def main():
 
-    numSample = 100
+    numSample = 3000
     dim = 5
 
     # 数据生成模式
@@ -30,9 +30,10 @@ def main():
     rbf = RBFNet(k=dim * 2)
     rbf.fit(*data)
 
-    testNum = 5
+    testNum = 20
     test_data = getData(testNum, dim, method=method)
     prediction = rbf.predict(test_data[0])
+
     for i in range(testNum):
         print 'X:', test_data[0][i]
         print 'real      :',test_data[1][i]

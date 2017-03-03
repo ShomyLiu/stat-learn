@@ -56,9 +56,10 @@ class KMeans(object):
         # 第二列存储当前数据与中心的距离(err)
         self._clusterAssment = np.empty((Num,2))
 
-        for _ in xrange(self._max_iter):
+        for s in xrange(self._max_iter):
             isConverge = True
             # step1: 更新簇内元素
+            print 'kmenas: iter ', s
             for i in range(Num):
                 MinDist = np.inf
                 ind = 0
@@ -80,12 +81,11 @@ class KMeans(object):
             for i in range(self._k):
                 allindex = self._clusterAssment[:,0]
                 cur_index = np.nonzero(allindex == i)[0] # 返回allindex中为i的下标
-                if len(dataX[cur_index]) == 0:
-                    continue
+                if len(dataX[cur_index]) == 0: continue
                 self._centers[i,:] = np.mean(dataX[cur_index], axis=0)
-
+            # print np.mean(self._clusterAssment[:,1], 0)
         self._label = self._clusterAssment[:, 0]
-        self._sse = sum(self._clusterAssment[:,1])
+        self._sse = np.sum(self._clusterAssment[:,1])
 
     def predict(self, X):
         '''
