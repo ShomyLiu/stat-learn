@@ -22,7 +22,7 @@ def getData(n=100, d=5, method='sum'):
 
 def main():
 
-    numSample = 30000
+    numSample = 3000
     dim = 5
 
     method = 'sum'
@@ -31,7 +31,7 @@ def main():
     rbf = RBFNet(k=dim * 2)
     rbf.fit(*data)
 
-    testNum = 10
+    testNum = 5
     test_data = getData(testNum, dim, method=method)
     prediction = rbf.predict(test_data[0])
     for i in range(testNum):

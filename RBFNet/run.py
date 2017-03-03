@@ -24,13 +24,13 @@ def main():
     # 数据生成模式
     # sum: 表示y为x的和
     # mul: 表示 y = 2*x
-    method = 'sum'
+    method = 'mul'
 
     data = getData(numSample,dim, method=method)
     rbf = RBFNet(k=dim * 2)
     rbf.fit(*data)
 
-    testNum = 20
+    testNum = 5
     test_data = getData(testNum, dim, method=method)
     prediction = rbf.predict(test_data[0])
 

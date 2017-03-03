@@ -84,7 +84,7 @@ class TFRBFNet(object):
         self.trainWithBeta = False
 
         # 最后预测的输出
-        self.predictionWithGD = self.addLayer(self.hidden_layer, self._hidden_num, self._output_n, self.keep_prob)
+        self.predictionWithGD = self.addLayer(self.hidden_layer, self._hidden_num, self._output_n)
         # 平方损失误差
         self.loss = tf.reduce_mean(tf.square(self.predictionWithGD - self.output_layer))
         # 梯度下降优化
@@ -106,7 +106,7 @@ class TFRBFNet(object):
             return self.sess.run(self.predictionWithBeta, feed_dict={self.input_layer: inputs})
         else:
             # 梯度下降方式训练权重
-            return self.sess.run(self.predictionWithGD, feed_dict={self.keep_prob:1.0, self.input_layer: inputs})
+            return self.sess.run(self.predictionWithGD, feed_dict={self.input_layer: inputs})
 
     def addLayer(self, inputs, inputs_size, output_size, activefunc=None):
         '''
