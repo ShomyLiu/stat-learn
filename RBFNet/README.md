@@ -1,4 +1,6 @@
 
+http://shomy.top/2017/02/26/rbf-network/
+
 ## 实现
 
 借助上述的理论，使用Python实现了简单的基于K-Means的RBFNet，以及用tensorflow实现了GPU版本的K-Means以及RBFNet，速度明显提升。
